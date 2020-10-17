@@ -1,38 +1,93 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class ButtonLevel extends Component {
     constructor(props) {
         super(props)
 
         this.state = {
-            level1: 0,
-            level2: 0,
-            level3: 0,
-            level4: 0,
-            level5: 0,
-            level6: 0,
-            level7: 0,
-            level8: 0,
+            clicked: false
         }
+        this.clickBtnLevel = this.clickBtnLevel.bind(this)
     }
 
-    clickLevel(e) {
-        console.log(e.target.id)
-        document.getElementById(e.target.id).className += 'btn-play-level-enabled'
+    clickBtnLevel(e) {
+        this.setState({
+            clicked: true
+        })
     }
 
     render() {
-        const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10]
-        const btn = arr.map((ele, index) => (
-            <button id={ele} className="btn-play-level btn-play-level-disabled" onClick={this.clickLevel} key={index}>Level {ele}</button>
-        ))
+        let max_level = 1;
+        const arr = [
+            {
+                id: 1,
+                title: "level mot",
+                order: 1,
+            },
+            {
+                id: 2,
+                title: "level hai",
+                order: 2,
+            },
+            {
+                id: 3,
+                title: "level hai",
+                order: 3,
+            },
+            {
+                id: 4,
+                title: "level hai",
+                order: 4,
+            },
+            {
+                id: 5,
+                title: "level hai",
+                order: 5,
+            },
+            {
+                id: 6,
+                title: "level hai",
+                order: 6,
+            },
+            {
+                id: 7,
+                title: "level hai",
+                order: 7,
+            },
+            {
+                id: 8,
+                title: "level hai",
+                order: 8,
+            },
+        ]
+        const btn = arr.map((ele, index) => {
+            let enable = 'btn-play-level btn-play-level-'
+            enable += max_level >= ele.order ? 'enabled' : 'disabled'
+            return (
+                <Link to="/question1">
+                    {
+                        this.state.clicked ?
+                        ''
+                        :
+                        <button
+                            id={ele.id}
+                            className={enable}
+                            onClick={this.clickBtnLevel}
+                            key={index}>
+                                Level{ele.id}
+                        </button>
+                    }
+                </Link>
+            )
+        })
+
         return (
             <div className="btn-level">
-                <button id="1" className="btn-play-level btn-play-level-enabled" onClick={this.clickLevel} key="1">Level 1</button>
                 {btn}
             </div>
         )
     }
 }
 
-export default ButtonLevel
+export default ButtonLevel;

@@ -105,3 +105,99 @@
 .log-out:hover {
     cursor: pointer;
 }
+
+ /* Giang commit --------------------------------------------------------------------------------------- */
+
+.body {
+    font-family: Arial;
+    padding: 10px;
+    background: #f1f1f1;
+}
+    
+.question{
+    position: relative;
+    background-color: #4CAF50;
+    border: none;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 10px;
+    margin: 10px;
+    width: 500px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 30px;    
+}
+
+.question:hover {
+    padding-left: 10%;
+}
+
+.form {
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.header {
+    text-align: center;
+    font-size: 60px;
+    padding: 6%;
+
+}
+
+.btn-control {
+    display: inline-block;
+    border-radius: 10px;
+    background-color: #f4511e;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+}
+.btn-control span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+}
+
+.btn-control span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+
+.btn-control:hover span {
+    padding-right: 25px;
+}
+ 
+.btn-control:hover span:after {
+    opacity: 1;
+    right: 0;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 800px) {
+    .leftcolumn, .rightcolumn {   
+        width: 100%;
+        padding: 0;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .topnav a {
+        float: none;
+        width: 100%;
+    }
+}
