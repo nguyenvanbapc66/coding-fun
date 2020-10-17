@@ -28,10 +28,20 @@ class Begin extends Component {
     }
 
     render() {
+        const isAuthenticated = localStorage.getItem('namePlayer') ? true : false
+
         return (
-            <div className="page-begin">
-                <input className="input-begin" placeholder="Enter your name player" onKeyUp={this.enter} />
-                <button className="btn-start" onClick={this.btnHandleClick}>Start</button>
+            <div>
+                {
+                    isAuthenticated && this.props.clickedBtn
+                    ?
+                    ' '
+                    :
+                    <div className="page-begin">
+                        <input className="input-begin" placeholder="Enter your name player" onKeyUp={this.enter} />
+                        <button className="btn-start" onClick={this.btnHandleClick}>Start</button>
+                    </div>
+                }
             </div>
         )
     }

@@ -4,9 +4,12 @@ import Auth from './Auth'
 
 class Level extends Component {
     render() {
+        window.addEventListener('load', () => this.props.updateClickedBtn(1))
+        const isAuthenticated = localStorage.getItem('namePlayer') ? true : false
+
         return (
             <div>
-                { this.props.clickedBtn && this.props.namePlayer ? 
+                { isAuthenticated && this.props.clickedBtn ? 
                     (
                         <span>
                             <ButtonLevel />

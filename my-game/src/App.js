@@ -41,8 +41,8 @@ class App extends Component {
         <Level 
           updateNamePlayer={this.updateNamePlayer}
           updateClickedBtn={this.updateClickedBtn}
-          namePlayer={this.state.namePlayer} 
-          clickedBtn={this.state.clickedBtn} 
+          clickedBtn={this.state.clickedBtn}
+          namePlayer={this.state.namePlayer}
         />
       </div>
     )

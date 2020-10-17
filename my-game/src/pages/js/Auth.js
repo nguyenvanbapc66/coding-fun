@@ -16,7 +16,7 @@ class Auth extends Component {
     render() {
         return (
             <div className="auth">
-                <span>{this.props.namePlayer}</span>
+                <span>{localStorage.getItem('namePlayer')}</span>
                 <button onClick={this.logOut}>Log Out</button>
             </div>
         )
