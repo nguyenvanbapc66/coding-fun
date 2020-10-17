@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import logout from '../../assets/log-out.png'
 
 class Auth extends Component {
     constructor(props) {
@@ -16,8 +17,8 @@ class Auth extends Component {
     render() {
         return (
             <div className="auth">
-                <span>{localStorage.getItem('namePlayer')}</span>
-                <button onClick={this.logOut}>Log Out</button>
+                <span className="username">{localStorage.getItem('namePlayer')}</span>
+                <img className="log-out" src={logout} onClick={this.logOut} />
             </div>
         )
     }

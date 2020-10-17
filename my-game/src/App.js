@@ -33,6 +33,7 @@ class App extends Component {
         {
           this.state.clickedBtn && this.state.namePlayer ? '' :
           <Begin 
+            namePlayer={this.state.namePlayer}
             updateClickedBtn={this.updateClickedBtn} 
             updateNamePlayer={this.updateNamePlayer} 
             clickedBtn={this.state.clickedBtn}

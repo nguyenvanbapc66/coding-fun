@@ -43,3 +43,65 @@
 .btn-start:hover {
     cursor: pointer;
 }
+
+.level-page>* {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin: 10px;
+}
+
+.btn-level {
+    max-width: 70%;
+}
+
+.btn-play-level {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid #bdc3c7;
+    background: #efefef;
+    margin: 10px;
+    font-size: 30px;
+}
+
+.btn-play-level:focus {
+    outline: none;
+}
+
+.btn-play-level:hover {
+    cursor: pointer;
+}
+
+.btn-play-level-enabled {
+    border: 1px solid #bdc3c7;
+    background: #efefef;
+}
+
+.btn-play-level-disabled {
+    border: 1px solid #efefef;
+    background: #efefef;
+    color: #bdc3c7;
+}
+
+.line {
+    height: 700px;
+    width: 1px;
+    background: black;
+}
+
+.username {
+    margin: 10px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.log-out {
+    width: 30px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+.log-out:hover {
+    cursor: pointer;
+}

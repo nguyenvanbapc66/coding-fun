@@ -16,15 +16,19 @@ class ButtonLevel extends Component {
         }
     }
 
-    clickLevel() {
-        console.log('clicked')
+    clickLevel(e) {
+        console.log(e.target.id)
+        document.getElementById(e.target.id).className += 'btn-play-level-enabled'
     }
 
     render() {
-        const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-        const btn = arr.map((ele, index) => (<button onClick={this.clickLevel} key={index}>Level {ele}</button>))
+        const arr = [2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const btn = arr.map((ele, index) => (
+            <button id={ele} className="btn-play-level btn-play-level-disabled" onClick={this.clickLevel} key={index}>Level {ele}</button>
+        ))
         return (
             <div className="btn-level">
+                <button id="1" className="btn-play-level btn-play-level-enabled" onClick={this.clickLevel} key="1">Level 1</button>
                 {btn}
             </div>
         )

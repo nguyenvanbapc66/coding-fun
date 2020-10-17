@@ -20,11 +20,13 @@ class Begin extends Component {
     }
 
     btnHandleClick() {
-        const newPoint = this.props.clickedBtn + 1
-        this.props.updateClickedBtn(newPoint)
-        this.setState({
-            clicked: newPoint
-        })
+        if(this.props.namePlayer) {
+            const newPoint = this.props.clickedBtn + 1
+            this.props.updateClickedBtn(newPoint)
+            this.setState({
+                clicked: newPoint
+            })
+        } 
     }
 
     render() {
